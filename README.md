@@ -1,6 +1,6 @@
-# Welcome to your Expo app 👋
+# Welcome to Vasu's interview Expo app 👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Expo Interview Project
 
 ## Get started
 
@@ -10,41 +10,132 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
    npm install
    ```
 
-2. Start the app
+For better local notification testing I suggest to use development build instead of Expo Go.
+2. Generate ios and android native code
+
+   ```bash
+   npx expo prebuild
+   ```
+
+3. Run on android
+
+   ```bash
+   npm run android
+   ```
+
+4. Run on ios
+
+   ```bash
+   npm run ios
+   ```
+
+Or run on Expo Go
 
    ```bash
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+## Project Overview
+# Tech Stack
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Expo 54.0.33
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+React Native 0.81.5
 
-## Get a fresh project
+Expo Router (file-based routing)
 
-When you're ready, run:
+Axios – API communication
 
-```bash
-npm run reset-project
-```
+Zustand – State management
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Zod – Schema validation
 
-## Learn more
+MMKV – Fast local key-value storage
 
-To learn more about developing your project with Expo, look at the following resources:
+Expo Secure Store – Secure auth storage
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
 
-## Join the community
+# UI & Theming
 
-Join our community of developers creating universal apps.
+Google Fonts integration
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Custom theme engine:
+
+Light mode
+
+Dark mode
+
+Centralized color system
+
+Linear gradients (expo-linear-gradient)
+
+Lucide icons (lucide-react-native)
+
+Custom bottom tab UI (not default Expo tabs)
+
+# Navigation & Routing
+
+Expo Router for navigation
+
+File-based routing system
+
+Custom layouts
+
+Auth & App route separation
+
+Protected routes using:
+
+Custom useAuth hook
+
+<Stack.Protected> method
+
+# Authentication System
+
+Secure login/session handling
+
+Auth state management via custom hook
+
+Secure data storage using:
+
+expo-secure-store
+
+Fast local storage using:
+
+MMKV
+
+# API Layer
+
+Axios-based API services
+
+Modular API structure
+
+Centralized API handling
+
+Clean request/response flow
+
+# Notifications
+
+Local notifications using expo-notifications
+
+Scheduled notification support
+
+# Media & Profile
+
+Image upload using expo-image-picker
+
+Optimized image rendering using expo-image
+
+# Keyboard Handling
+
+Smooth keyboard behavior using:
+
+react-native-keyboard-controller
+
+# State Management
+
+Zustand for global state
+
+Modular store architecture
+
+Scalable and maintainable design
+
