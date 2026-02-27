@@ -52,8 +52,11 @@ export default function ProfileScreen() {
     const image = await pickImageFromGallery({
       aspect: [1, 1],
       quality: 0.7,
-      allowsEditing: false,
+      allowsEditing: true,
     });
+
+    console.log('image========>', image);
+
 
     if (!image) return;
 
@@ -164,13 +167,15 @@ export default function ProfileScreen() {
   );
 
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
       <View style={styles.header}>
         <View style={styles.avatarContainer}>
           {user?.avatar?.url ? (
             <Image
               source={{
-                uri: user.avatar?.url,
+                uri: user.avatar.url.startsWith("http://")
+                  ? user.avatar.url.replace("http://", "https://")
+                  : user.avatar.url,
               }}
               style={styles.avatar}
               contentFit="cover"
@@ -330,5 +335,8 @@ const useStyles = () => {
     logoutButton: {
       marginTop: SPACING.xl,
     },
+    contentContainer: {
+      paddingBottom: SPACING.xxl
+    }
   });
 };
